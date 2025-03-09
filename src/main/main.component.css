@@ -1,0 +1,119 @@
+/* Center the search box on the screen */
+#searchContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Search box styling */
+#searchBox {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    width: 25rem;
+    padding: 0.6rem;
+    border-radius: 2rem;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Input field */
+#searchBox input {
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    padding: 0.5rem 2.5rem; /* Extra padding for icon */
+    border-radius: 2rem;
+    width: 100%;
+}
+
+/* Search icon */
+#searchBox i {
+    position: absolute;
+    left: 15px;
+    color: gray;
+    font-size: 1.2rem;
+}
+
+.display-data{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.weather h2, .weather p{
+    color: #fff;
+    font-family: monospace, serif;
+}
+
+.tempAndDescription {
+    display: flex;
+    align-items: center;  /* Align icon and text vertically in center */
+    gap: 1.6rem;  /* Space between icon and text */
+}
+
+.tempDetails {
+    /* display: flex; */
+    /* flex-direction: column; Keep temp and description in a column */
+    color: #fff;
+    font-family: monospace, serif;
+    
+}
+
+.tempDetails p:first-child{
+    font-size: 2rem; /* Adjust font size */
+    line-height: 0; /* Reduce space between temp and description */
+
+}
+
+.tempAndDescription .fa-cloud{
+    color:#fff;
+    font-size: 5rem;
+}
+
+.data-table th{
+    padding: 0rem 2rem 1rem 1rem;
+    text-align: center;
+    font-size: 1rem;
+    font-family: monospace, serif;
+}
+
+.data-table td{
+    text-align: center;
+    padding-top: 2rem;
+    font-size: 1rem;
+    font-family: monospace;
+}
+
+.data-table {
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
+    backdrop-filter: blur(10px); /* Blur effect */
+    color: white; /* Text color */
+    border-radius: 0.5rem;
+    width: 50%;
+}
+
+.forecast{
+    display: flex;
+    flex-direction: row;
+    margin-top: 2rem;
+    color: #fff;
+    justify-content: space-between;
+}
+
+.forecast li{
+    backdrop-filter: blur(10px);
+    background: rgb(255, 255, 255, 0.1);
+    padding: 1.5rem 6rem 1.5rem 6rem;
+
+}
+
+.forecast {
+    list-style: none; /* Removes bullet points */
+  }
+
+  div h2{
+    color:white
+  }
+

@@ -1,0 +1,63 @@
+
+<h4>Weather App</h4>
+<div id="searchContainer">
+    <div id="searchBox">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" [(ngModel)]="city" (keydown.enter)="getWeatherData()" placeholder="Search for a city">
+    </div>
+</div>
+  
+<div *ngIf="weatherData" class="weather">
+    <h2>{{ weatherData.name }}, {{ weatherData.sys.country }}</h2>
+
+    <p>{{ currentTime | date:'EEEE, MMM d, y h:mm a' }}</p>
+    <div class="display-data">
+        <div class="tempAndDescription">
+            <i class="fa-solid fa-cloud"></i>
+            <div class="tempDetails">
+                <p>{{ weatherData.main.temp }}°C</p>
+                <p>{{ weatherData.weather[0].description }}</p>
+            </div>
+        </div>
+    
+    <table class="data-table">
+        <tr>
+          <td>{{ weatherData.main.temp_max }}°C</td>
+          <td>{{ weatherData.wind.speed }} m/s</td>
+          <td>{{ weatherData.sys.sunrise | date:'h:mm a' }}</td>         
+        </tr>
+        <tr>
+          <th> High</th>
+          <th> Wind</th>
+          <th> Sunrise</th>         
+        </tr>     
+        <tr>
+            <td>{{ weatherData.main.temp_min }}°C</td>
+          <td>{{ weatherData.main.humidity }}%</td>
+          <td colspan="3">{{ weatherData.sys.sunset | date:'h:mm a' }}</td>
+        </tr>
+        <tr>
+            <th> Low</th>
+          <th>Humidity</th>
+          <th colspan="3">Sunset</th>
+        </tr>
+      </table>
+      </div>
+      
+</div>
+
+<!-- Forecast Data -->
+<div *ngIf="forecastData && forecastData.length > 0">
+    <h2>Forecast</h2> <!-- Heading appears only if forecastData exists -->
+    <ul class="forecast">
+      <li *ngFor="let forecast of forecastData">
+        <p><strong>{{ forecast.dt * 1000 | date:'h:mm a' }}</strong></p>
+        <p><i class="fa-solid fa-temperature-high"></i> {{ forecast.main.temp }}°C</p>
+        <p>
+            <i [class]="getWeatherIcon(forecast.weather[0].description)"></i>
+            {{ forecast.weather[0].description }}
+          </p>
+      </li>
+    </ul>
+  </div>
+
